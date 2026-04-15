@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Nettleship – CV</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 14px;
+      color: #222;
+      background: #f4f4f4;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+
+    /* Top accent bar */
+    .accent-bar {
+      height: 6px;
+      background: #2e7d8c;
+    }
+
+    /* Header */
+    header {
+      padding: 32px 40px 24px;
+      border-bottom: 1.5px solid #ddd;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: #111;
+    }
+
+    header h2 {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #2e7d8c;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 24px;
+      font-size: 0.92em;
+      color: #444;
+    }
+
+    .contact strong {
+      color: #111;
+    }
+
+    /* Body layout */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 0;
+    }
+
+    /* Main column */
+    main {
+      padding: 28px 36px 36px 40px;
+      border-right: 1.5px solid #eee;
+    }
+
+    .summary {
+      font-size: 0.93em;
+      color: #333;
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    section h3 {
+      font-size: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #2e7d8c;
+      margin-bottom: 14px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #2e7d8c;
+    }
+
+    .job, .edu-entry {
+      margin-bottom: 18px;
+    }
+
+    .job-header, .edu-header {
+      margin-bottom: 2px;
+    }
+
+    .employer {
+      font-weight: 700;
+      color: #111;
+    }
+
+    .employer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .employer a:hover {
+      color: #2e7d8c;
+    }
+
+    .role {
+      font-style: italic;
+      color: #444;
+    }
+
+    .dates {
+      font-size: 0.82em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 4px;
+      color: #333;
+      font-size: 0.93em;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #555;
+      font-size: 0.85em;
+      top: 1px;
+    }
+
+    .cert-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cert-list li {
+      padding-left: 0;
+      margin-bottom: 5px;
+      font-size: 0.92em;
+      color: #333;
+    }
+
+    .cert-list li::before {
+      display: none;
+    }
+
+    /* Sidebar */
+    aside {
+      padding: 28px 24px 36px;
+    }
+
+    aside h3 {
+      font-size: 0.8em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #2e7d8c;
+      margin-bottom: 18px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #2e7d8c;
+    }
+
+    .skill-group {
+      margin-bottom: 16px;
+    }
+
+    .skill-group h4 {
+      font-size: 0.88em;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 3px;
+    }
+
+    .skill-group p {
+      font-size: 0.88em;
+      color: #444;
+    }
+
+    @media (max-width: 680px) {
+      .body { grid-template-columns: 1fr; }
+      main { border-right: none; border-bottom: 1.5px solid #eee; padding: 24px 20px; }
+      aside { padding: 20px; }
+      header { padding: 24px 20px 18px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="accent-bar"></div>
+
+    <header>
+      <h1>David Nettleship</h1>
+      <h2>Cloud Engineer</h2>
+      <div class="contact">
+        <span>Nottinghamshire, UK</span>
+        <span><strong>07772815541</strong></span>
+        <span>nettleshipdavid6@gmail.com</span>
+      </div>
+    </header>
+
+    <div class="body">
+      <main>
+        <p class="summary">
+          Hello! I am an experienced and enthusiastic Cloud Engineer specialising in AWS with strong
+          Terraform skills and a background in backend software development. Passionate about automation,
+          cybersecurity and cost optimisation with a proven ability to implement cloud solutions that
+          enhance efficiency, security, and cost savings.
+        </p>
+
+        <section>
+          <h3>Experience</h3>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="employer"><a href="https://www.knowbe4.com" target="_blank" rel="noopener">KnowBe4</a></span>
+              <span class="role"> – Senior Site Reliability Engineer</span>
+            </div>
+            <div class="dates">December 2025 – Present</div>
+            <ul>
+              <li>Led work on domain migration from existing platforms to AWS.</li>
+              <li>Pending...</li>
+              <li>Pending...</li>
+              <li>Pending...</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="employer"><a href="https://www.santander.co.uk" target="_blank" rel="noopener">Santander UK</a></span>
+              <span class="role"> – Cloud Engineer</span>
+            </div>
+            <div class="dates">June 2022 – December 2025</div>
+            <ul>
+              <li>Led work on cost-saving strategies across the landing zone, implemented S3 lifecycle policies to drive significant savings.</li>
+              <li>Implemented enhanced monitoring and security standards.</li>
+              <li>Developed AWS Lambda functions and serverless state machines for various business processes using Python.</li>
+              <li>Supported varied internal customer feature requests.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="employer"><a href="https://www.lseg.com" target="_blank" rel="noopener">London Stock Exchange Group (Refinitiv/LSEG)</a></span>
+              <span class="role"> – Cloud Platform Engineer</span>
+            </div>
+            <div class="dates">April 2020 – June 2022</div>
+            <ul>
+              <li>Worked as part of a globally distributed team managing a complex AWS estate.</li>
+              <li>Developed and maintained Infrastructure as Code (Terraform) modules.</li>
+              <li>24/7 on-call support for critical systems.</li>
+              <li>Created scripts to pull metrics and enable process automation (Python, Lambda).</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <span class="employer"><a href="https://risk.lexisnexis.co.uk" target="_blank" rel="noopener">LexisNexis Risk Solutions</a></span>
+              <span class="role"> – Software Engineer</span>
+            </div>
+            <div class="dates">March 2019 – April 2020</div>
+            <ul>
+              <li>Provided new development and support for the DataHub MI &amp; Billing platform.</li>
+              <li>Optimised DB read/writes by refactoring functions in the legacy codebase.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Education</h3>
+          <div class="edu-entry">
+            <div class="edu-header">
+              <span class="employer"><a href="https://www.ncl.ac.uk" target="_blank" rel="noopener">Newcastle University</a></span>
+              <span class="role"> – BSc (Hons) Computer Science</span>
+            </div>
+            <div class="dates">September 2015 – June 2018</div>
+            <p style="font-size:0.93em;color:#333;">
+              While at university I developed a broad skill set in Computer Science, with a focus on
+              biological computation and AI in my final year.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Certifications</h3>
+          <ul class="cert-list">
+            <li>AWS Certified Security Specialty – May 2025</li>
+            <li>AWS Certified AI Practitioner – October 2024</li>
+            <li>HashiCorp Certified Terraform Associate – July 2024</li>
+            <li>AWS Certified Solutions Architect Associate – October 2023</li>
+            <li>AWS Certified DevOps Professional – February 2023</li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <h3>Tools &amp; Technologies</h3>
+
+        <div class="skill-group">
+          <h4>Cloud &amp; Infrastructure:</h4>
+          <p>AWS, Azure, Terraform</p>
+        </div>
+
+        <div class="skill-group">
+          <h4>Programming:</h4>
+          <p>Python, Bash</p>
+        </div>
+
+        <div class="skill-group">
+          <h4>CI/CD / DevOps:</h4>
+          <p>GitHub Actions, GitLab</p>
+        </div>
+
+        <div class="skill-group">
+          <h4>Security &amp; Monitoring:</h4>
+          <p>AWS Security Tools, Logging &amp; SIEM</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
