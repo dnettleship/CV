@@ -2,6 +2,8 @@
 
 My professional CV, hosted as a static website on AWS.
 
+Live site: https://d3f4keigmofume.cloudfront.net
+
 ## Structure
 
 ```
