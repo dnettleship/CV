@@ -7,3 +7,13 @@ output "s3_bucket_name" {
   description = "Name of the S3 bucket hosting the CV"
   value       = aws_s3_bucket.cv.id
 }
+
+output "cloudfront_distribution_id" {
+  description = "CloudFront distribution ID for the CV site"
+  value       = aws_cloudfront_distribution.cv.id
+}
+
+output "github_actions_role_arn" {
+  description = "IAM role assumed by the deploy workflow via GitHub OIDC"
+  value       = aws_iam_role.github_actions.arn
+}

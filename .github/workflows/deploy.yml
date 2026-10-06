@@ -1,0 +1,55 @@
+name: Deploy CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cv.html"
+      - "terraform/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+# Never run two deploys at once; a newer push supersedes a queued one.
+concurrency:
+  group: deploy-cv
+  cancel-in-progress: false
+
+permissions:
+  id-token: write # OIDC token for AWS
+  contents: read
+
+env:
+  AWS_REGION: eu-west-2
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::304707804854:role/cv-github-actions
+          aws-region: ${{ env.AWS_REGION }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.6.5" # match local version so state stays readable both ways
+          terraform_wrapper: false
+
+      - name: Terraform init
+        run: terraform init -input=false
+
+      - name: Terraform apply
+        run: terraform apply -input=false -auto-approve
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "$(terraform output -raw cloudfront_distribution_id)" \
+            --paths "/*" \
+            --query "Invalidation.{ID:Id,Status:Status}" \
+            --output table
